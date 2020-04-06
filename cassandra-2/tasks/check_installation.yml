@@ -1,0 +1,51 @@
+---
+ - name: Gather the  package facts
+   package_facts:
+     manager: apt
+
+
+ - name: Check whether a package called cassandra is installed
+   debug:
+     msg: "{{ ansible_facts.packages['cassandra'] | length }} versions of cassandra are installed!"
+   when: "'cassandra' in ansible_facts.packages"
+ 
+ - name: create a log file
+   file:
+     path: /tmp/foo.log
+     state: touch
+     mode: 0777
+ 
+ - name: Check nodetool status
+   shell: nodetool status
+   changed_when: false
+   register: result
+   
+ - name: append_nodetool_status
+   lineinfile:
+     dest: /tmp/foo.log
+     line: "{{ result.stdout }}"
+     insertafter: EOF
+     mode: 0777
+
+
+ - debug:
+     var: result.stdout
+ 
+ - name: check cassandra service status
+   shell: service cassandra status
+   changed_when: false
+   register: result
+ 
+ - name: append_service_status
+   lineinfile:
+     dest: /tmp/foo.log
+     line: "{{ result.stdout }}"
+     insertafter: EOF
+     mode: 0777
+
+ - debug:
+     var: result.stdout
+
+ 
+ 
+ 

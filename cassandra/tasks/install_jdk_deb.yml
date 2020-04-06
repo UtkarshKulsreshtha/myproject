@@ -1,0 +1,7 @@
+---
+ - command: apt-get clean
+ - name: Install the  package
+   apt:
+    name: openjdk-8-jdk
+    update_cache: yes
+    state: latest

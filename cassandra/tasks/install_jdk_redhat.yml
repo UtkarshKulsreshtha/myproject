@@ -1,0 +1,6 @@
+---
+ - name: Install open jdk for centos
+   yum: 
+    name: java-1.8.0-openjdk
+    update_cache: yes
+    state: latest

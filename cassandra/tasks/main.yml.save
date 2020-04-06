@@ -1,0 +1,10 @@
+---
+# tasks file for cassandra
+- hosts: web
+  
+  tasks: 
+   - name: add apcahe repository
+     apt_repository:
+	repo: deb http://www.apache.org/dist/cassandra/debian 311x main
+	state: present
+   

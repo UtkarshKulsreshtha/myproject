@@ -1,0 +1,7 @@
+---
+ - name: change the configration
+   lineinfile:
+     path: /etc/cassandra/cassandra.yaml
+     regexp: '^cluster_name:'
+     line: "cluster_name: 'utkarsh'"
+     mode: 0777

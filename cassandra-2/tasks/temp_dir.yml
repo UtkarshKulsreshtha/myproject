@@ -1,0 +1,7 @@
+---
+ - name: create a temporary directory for installation binaries
+   file:
+     dest: /home/gslab/install_dir
+     state: directory
+     mode: 0777
+

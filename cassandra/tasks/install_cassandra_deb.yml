@@ -1,0 +1,22 @@
+---
+ - name: install apt-transport-https
+   apt:
+    name: apt-transport-https
+    state: latest
+ 
+ - name: Adding repository keys 
+   apt_key:
+    url:  https://www.apache.org/dist/cassandra/KEYS
+    state: present
+ 
+ - name: Add the Cassandra repository to the system
+   apt_repository:
+    repo: deb http://www.apache.org/dist/cassandra/debian 311x main
+    state: present
+
+ - name: install cassandra on debian
+   apt:
+    name: cassandra
+    update_cache: yes
+    state: latest
+

@@ -1,0 +1,12 @@
+---
+ - name: Adding repository
+   copy:
+    src: /etc/ansible/roles/cassandra/files/cassandra.repo
+    dest: /etc/yum.repos.d
+    mode: 0777
+ - name: Install cassandra for centos
+   yum:
+    name: cassandra
+    update_cache: yes
+    state: latest
+

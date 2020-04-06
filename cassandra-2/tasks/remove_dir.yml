@@ -1,0 +1,3 @@
+---
+ - name: Remove directory
+   shell: rm -rf install_dir

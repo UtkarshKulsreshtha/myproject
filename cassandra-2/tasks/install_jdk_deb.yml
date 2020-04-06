@@ -1,0 +1,10 @@
+---
+ - name: update package list
+   shell: sudo apt update
+   changed_when: false
+ - name: install open jdk
+   apt:
+    name: openjdk-8-jdk
+    state: latest
+  
+

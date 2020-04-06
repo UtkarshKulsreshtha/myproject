@@ -1,0 +1,6 @@
+---
+# vars file for cassandra
+
+jdk_url_redhat: http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+shell_cassandra_deb: wget http://dl.bintray.com/apache/cassandra/pool/main/c/cassandra/cassandra_3.11.5_all.deb
+shell_jdk_redhat: yum -y localinstall jdk-8u131-linux-x64.rpm

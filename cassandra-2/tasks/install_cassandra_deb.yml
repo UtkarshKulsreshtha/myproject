@@ -1,0 +1,17 @@
+---
+ - name: download cassandra deb binary
+   get_url:
+     url: https://dl.bintray.com/apache/cassandra/pool/main/c/cassandra/cassandra_3.11.6_all.deb
+     dest: /home/gslab/install_dir
+     mode: 0777
+ 
+ - name: install cassandra deb binary
+   apt: deb="/home/gslab/install_dir/cassandra_3.11.6_all.deb"
+
+ - name: download cassandra-tools
+   get_url:
+     url: https://dl.bintray.com/apache/cassandra/pool/main/c/cassandra/cassandra-tools_3.11.6_all.deb
+     dest: /home/gslab/install_dir
+     mode: 0777
+ - name: install cassandra-tools deb binary
+   apt: deb="/home/gslab/install_dir/cassandra-tools_3.11.6_all.deb"

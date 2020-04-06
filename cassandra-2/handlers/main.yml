@@ -1,0 +1,17 @@
+---
+# handlers file for cassandra-2 
+# - name: append_nodetool_status
+ #  lineinfile:
+  #   dest: /tmp/foo.log
+   #  line: "{{ result.stdout }}"
+    # insertafter: EOF
+     #mode: 0777
+
+# - name: append_service_status
+ #  lineinfile:
+  #   dest: /tmp/foo.log
+   #  line: "{{ result.stdout }}"
+    # insertafter: EOF
+     #mode: 0777
+  
+
